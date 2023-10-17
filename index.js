@@ -11,6 +11,17 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+// Define an arrow function 
 const titleCased = () => {
-  return tutorials
-}
+  // the map method iterates over the tutorials array
+  return tutorials.map(tutorial => {
+    // Split each tutorial sentence
+    return tutorial.split(' ')
+      .map(word => {
+        // Capitalize the first letter of each word and concatenate the rest of the word
+        return word[0].toUpperCase() + word.slice(1);
+      })
+      // Join the words back into a sentence and return it
+      .join(' ');
+  });
+};
